@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  <button type="button" mat-button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>Super Aluno</span>
+  <span class="spacer"></span>
+
+  <button mat-icon-button class="" >
+    <mat-icon>favorite</mat-icon>
+  </button>
+
+  <button mat-icon-button>
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <div class="menu-organizer">
+      <div routerLink="/login" > Cadernos </div>
+      <div routerLink="" > Cadernos </div>
+      <div routerLink="" > Cadernos </div>
+      <div routerLink="" > Cadernos </div>
+    </div>
+
+    <!-- <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button> -->
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <!-- <routerOutlet></routerOutlet> -->
+  </div>
+
+</mat-drawer-container>
