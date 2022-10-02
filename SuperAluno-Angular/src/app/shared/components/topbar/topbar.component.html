@@ -18,9 +18,9 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <div class="menu-organizer">
-      <div routerLink="/login" > Cadernos </div>
-      <div routerLink="" > Cadernos </div>
-      <div routerLink="" > Cadernos </div>
+      <div routerLink="/home" > inicio </div>
+      <div routerLink="/details" > Meus Dados </div>
+      <div routerLink="/notebooks" > Meus Cadernos </div>
       <div routerLink="" > Cadernos </div>
     </div>
 
@@ -31,7 +31,7 @@
   </mat-drawer>
 
   <div class="example-sidenav-content">
-    <!-- <routerOutlet></routerOutlet> -->
+    <router-outlet></router-outlet>
   </div>
 
 </mat-drawer-container>
