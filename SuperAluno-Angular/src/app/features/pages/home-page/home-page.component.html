@@ -1,3 +1,15 @@
-<h1>Home Page</h1>
-
-<p>teste de página inicial</p>
+<mat-list>
+  <div mat-subheader>Folders</div>
+  <mat-list-item *ngFor="let folder of folders">
+    <mat-icon mat-list-icon color = "primary">folder</mat-icon>
+    <div mat-line>{{folder.name}}</div>
+    <div mat-line> {{folder.updated | date}} </div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <div mat-subheader>Notes</div>
+  <mat-list-item *ngFor="let note of notes">
+    <mat-icon mat-list-icon>note</mat-icon>
+    <div mat-line>{{note.name}}</div>
+    <div mat-line> {{note.updated | date}} </div>
+  </mat-list-item>
+</mat-list>
