@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 
 import { TopbarComponent } from './components/topbar/topbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const materialModules = [
@@ -28,7 +29,8 @@ const materialModules = [
 
 const angularModules = [
   RouterModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  HttpClientModule
 ]
 
 const components = [

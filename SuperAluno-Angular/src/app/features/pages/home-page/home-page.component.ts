@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Materia } from '../../../shared/models/materia.model';
+import { Caderno } from '../../../shared/models/caderno.model';
+import { CadernoService } from '../../../shared/services/caderno.service';
 
 export interface Section {
   name: string;
@@ -12,34 +15,28 @@ export interface Section {
 
 export class HomePageComponent implements OnInit {
 
-  folders: Section[] = [
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-  ];
-  notes: Section[] = [
-    {
-      name: 'Vacation Itinerary',
-      updated: new Date('2/20/16'),
-    },
-    {
-      name: 'Kitchen Remodel',
-      updated: new Date('1/18/16'),
-    },
-  ];
+  materias!: Materia[];
+  cadernos!: Caderno[];
 
-  constructor() { }
+  constructor(
+    private cadernoService: CadernoService
+  ) { }
 
   ngOnInit(): void {
+
+      this.materias = [
+        {
+          idCaderno : 1,
+          conteudo : "de constante<\/strong> e em linha reta.<\/p>"
+        },
+        {
+          idCaderno : 2,
+          conteudo : "teste"
+        }
+      ]
+
+      this.cadernoService.findAllByUsuario(1).subscribe((cadernos) => this.cadernos = cadernos);
+
   }
 
 }
