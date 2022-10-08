@@ -17,9 +17,9 @@ public class CadernoService {
 	@Autowired
 	private UsuarioService usuarioService;
 	
-	public List<CadernoEntity> findAllByUsuario(Long idUsuario) {
+	public List<CadernoEntity> findAllCadernoByUsuario(Long idUsuario) {
 		UsuarioEntity usuario = this.usuarioService.findById(idUsuario);
-		return this.cadernoRepository.findAllByUsuario(usuario);
+		return this.cadernoRepository.findAllCadernoByUsuario(usuario);
 	}
 
 }

@@ -11,6 +11,6 @@ import com.superaluno.entities.UsuarioEntity;
 @Repository
 public interface CadernoRepository extends JpaRepository<CadernoEntity, Long> {
 	
-	List<CadernoEntity> findAllByUsuario(UsuarioEntity usuario);
+	List<CadernoEntity> findAllCadernoByUsuario(UsuarioEntity usuario);
 	
 }

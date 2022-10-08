@@ -23,8 +23,8 @@ public class CadernoController {
 	private CadernoService cadernoService;
 	
 	@GetMapping("/{idUsuario}")
-	public List<CadernoEntityDTO> findAllByUsuario(@PathVariable Long idUsuario) {
-		List<CadernoEntity> cadernos = this.cadernoService.findAllByUsuario(idUsuario);
+	public List<CadernoEntityDTO> findAllCadernoByUsuario(@PathVariable Long idUsuario) {
+		List<CadernoEntity> cadernos = this.cadernoService.findAllCadernoByUsuario(idUsuario);
 		List<CadernoEntityDTO> cadernosDTO = new ArrayList<>();
 		for(CadernoEntity caderno : cadernos) {
 			cadernosDTO.add(new CadernoEntityDTO(caderno));
