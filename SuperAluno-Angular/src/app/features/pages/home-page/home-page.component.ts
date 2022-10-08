@@ -35,7 +35,7 @@ export class HomePageComponent implements OnInit {
         }
       ]
 
-      this.cadernoService.findAllByUsuario(1).subscribe((cadernos) => this.cadernos = cadernos);
+      this.cadernoService.findAllCadernoByUsuario(1).subscribe((cadernos) => this.cadernos = cadernos);
 
   }
 
