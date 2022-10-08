@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
-@Table(name = "materia")
+@Table(name = "materias")
 public class MateriaEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;

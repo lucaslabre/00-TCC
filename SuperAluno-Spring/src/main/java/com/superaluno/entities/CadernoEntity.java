@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "caderno")
+@Table(name = "cadernos")
 public class CadernoEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
