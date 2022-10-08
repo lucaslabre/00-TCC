@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { EditorComponent } from './components/editor/editor.component';
 
 
 const tinyModules = [
@@ -39,7 +40,8 @@ const angularModules = [
 ]
 
 const components = [
-  TopbarComponent
+  TopbarComponent,
+  EditorComponent
 ]
 
 @NgModule({
