@@ -14,7 +14,12 @@ import { MatListModule } from '@angular/material/list';
 
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
+
+const tinyModules = [
+  EditorModule
+]
 
 const materialModules = [
   MatButtonModule,
@@ -44,12 +49,14 @@ const components = [
   imports: [
     CommonModule,
     ...materialModules,
-    ...angularModules
+    ...angularModules,
+    ...tinyModules
   ],
   exports: [
     ...materialModules,
     ...angularModules,
-    ...components
+    ...components,
+    ...tinyModules
   ]
 })
 export class SharedModule { }
