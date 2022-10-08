@@ -16,6 +16,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { EditorComponent } from './components/editor/editor.component';
+import { ContainerPageDirective } from './directives/container-page.directive';
 
 
 const tinyModules = [
@@ -44,9 +45,14 @@ const components = [
   EditorComponent
 ]
 
+const directives = [
+  ContainerPageDirective
+]
+
 @NgModule({
   declarations: [
-    ...components
+    ...components,
+    ...directives
   ],
   imports: [
     CommonModule,
@@ -58,6 +64,7 @@ const components = [
     ...materialModules,
     ...angularModules,
     ...components,
+    ...directives,
     ...tinyModules
   ]
 })
