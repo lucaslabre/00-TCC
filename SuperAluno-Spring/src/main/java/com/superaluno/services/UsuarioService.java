@@ -15,8 +15,8 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	public UsuarioEntity findById(Long idUsuario) {
-		Optional<UsuarioEntity> usuario = this.usuarioRepository.findById(idUsuario);
+	public UsuarioEntity findUsuarioByIdUsuario(Long idUsuario) {
+		Optional<UsuarioEntity> usuario = this.usuarioRepository.findUsuarioByIdUsuario(idUsuario);
 		return usuario.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: "+idUsuario+", Tipo: "+UsuarioEntity.class.getName()));
 	}
 

@@ -18,7 +18,7 @@ public class CadernoService {
 	private UsuarioService usuarioService;
 	
 	public List<CadernoEntity> findAllCadernoByUsuario(Long idUsuario) {
-		UsuarioEntity usuario = this.usuarioService.findById(idUsuario);
+		UsuarioEntity usuario = this.usuarioService.findUsuarioByIdUsuario(idUsuario);
 		return this.cadernoRepository.findAllCadernoByUsuario(usuario);
 	}
 

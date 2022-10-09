@@ -16,8 +16,8 @@ public class MateriaService {
 	@Autowired
 	private MateriaRepository materiaRepository;
 	
-	public MateriaEntity findById(Long idMateria) {
-		Optional<MateriaEntity> materia = this.materiaRepository.findById(idMateria);
+	public MateriaEntity findMateriaByIdMateria(Long idMateria) {
+		Optional<MateriaEntity> materia = this.materiaRepository.findMateriaByIdMateria(idMateria);
 		return materia.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: "+idMateria+", Tipo: "+UsuarioEntity.class.getName()));
 	}
 

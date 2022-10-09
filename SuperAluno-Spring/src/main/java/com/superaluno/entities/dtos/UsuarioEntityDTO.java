@@ -8,7 +8,6 @@ public class UsuarioEntityDTO {
 	private String nomeUsuario;
 	private String emailUsuario;
 	private String cpfUsuario;
-	private String senhaUsuario;
 	
 	
 	public UsuarioEntityDTO(UsuarioEntity usuarioEntity) {
@@ -17,7 +16,6 @@ public class UsuarioEntityDTO {
 		this.nomeUsuario = usuarioEntity.getNomeUsuario();
 		this.emailUsuario = usuarioEntity.getEmailUsuario();
 		this.cpfUsuario = usuarioEntity.getCpfUsuario();
-		this.senhaUsuario = usuarioEntity.getSenhaUsuario();
 	}
 
 	public Long getIdUsuario() {
@@ -50,14 +48,6 @@ public class UsuarioEntityDTO {
 
 	public void setCpfUsuario(String cpfUsuario) {
 		this.cpfUsuario = cpfUsuario;
-	}
-
-	public String getSenhaUsuario() {
-		return senhaUsuario;
-	}
-
-	public void setSenhaUsuario(String senhaUsuario) {
-		this.senhaUsuario = senhaUsuario;
 	}
 
 }

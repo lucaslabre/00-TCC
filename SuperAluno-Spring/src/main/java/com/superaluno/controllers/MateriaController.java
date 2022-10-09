@@ -20,8 +20,8 @@ public class MateriaController {
 	private MateriaService materiaService;
 	
 	@GetMapping("/{idMateria}")
-	public MateriaEntityDTO findById(@PathVariable Long idMateria) {
-		MateriaEntity materia = this.materiaService.findById(idMateria);
+	public MateriaEntityDTO findMateriaByIdMateria(@PathVariable Long idMateria) {
+		MateriaEntity materia = this.materiaService.findMateriaByIdMateria(idMateria);
 		MateriaEntityDTO materiaDTO = new MateriaEntityDTO(materia);
 		return materiaDTO;
 	}
