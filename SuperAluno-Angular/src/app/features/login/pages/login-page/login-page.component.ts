@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../../../usuarios/models/usuario.model';
 
 @Component({
   templateUrl: './login-page.component.html',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
+  usuario!: Usuario;
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

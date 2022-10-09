@@ -9,6 +9,7 @@ import { AppMainComponent } from './app.main.component';
 import { LoginModule } from './features/login/login.module';
 import { CadernosModule } from './features/cadernos/cadernos.module';
 import { HomeModule } from './features/home/home.module';
+import { UsuariosModule } from './features/usuarios/usuarios.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeModule } from './features/home/home.module';
     LoginModule,
     CadernosModule,
     HomeModule,
+    UsuariosModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
