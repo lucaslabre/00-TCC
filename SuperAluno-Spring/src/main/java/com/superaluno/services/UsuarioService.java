@@ -20,4 +20,9 @@ public class UsuarioService {
 		return usuario.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Id: "+idUsuario+", Tipo: "+UsuarioEntity.class.getName()));
 	}
 
+	public UsuarioEntity findUsuarioByEmailAndSenha(String email, String senha) {
+		Optional<UsuarioEntity> usuario = this.usuarioRepository.findUsuarioByEmailUsuarioAndSenhaUsuario(email, senha);
+		return usuario.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Email: "+email+", Tipo: "+UsuarioEntity.class.getName()));
+	}
+
 }
