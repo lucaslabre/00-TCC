@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Materia } from '../../../shared/models/materia.model';
-import { Caderno } from '../../../shared/models/caderno.model';
-import { CadernoService } from '../../../shared/services/caderno.service';
+import { Materia } from '../../../../shared/models/materia.model';
+import { Caderno } from '../../../../shared/models/caderno.model';
+import { CadernoService } from '../../../cadernos/services/caderno.service';
 
 export interface Section {
   name: string;

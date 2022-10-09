@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Caderno } from '../models/caderno.model';
+import { Caderno } from '../../../shared/models/caderno.model';
 
 @Injectable({
   providedIn: 'root'
