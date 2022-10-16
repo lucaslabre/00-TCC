@@ -10,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class CadernoPageComponent implements OnInit {
 
-  materias!: Materia[];
+  materiasUsuario!: Materia[];
   cadernos!: Caderno[];
 
   form: FormGroup = new FormGroup({texto: new FormControl('')});
@@ -21,16 +21,7 @@ export class CadernoPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.materias = [
-      {
-        idCaderno : 1,
-        conteudo : "de constante<\/strong> e em linha reta.<\/p>"
-      },
-      {
-        idCaderno : 2,
-        conteudo : "teste"
-      }
-    ]
+
 
     this.cadernoService.findAllCadernoByUsuario(1).subscribe((cadernos) => this.cadernos = cadernos);
 

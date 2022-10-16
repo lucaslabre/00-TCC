@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -37,7 +37,8 @@ const materialModules = [
 const angularModules = [
   RouterModule,
   ReactiveFormsModule,
-  HttpClientModule
+  HttpClientModule,
+  FormsModule
 ]
 
 const components = [

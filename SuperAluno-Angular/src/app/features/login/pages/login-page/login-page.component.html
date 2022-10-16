@@ -6,7 +6,7 @@
     <!-- E-mail input -->
     <mat-form-field appearance="outline">
       <mat-label>E-mail</mat-label>
-      <input matInput placeholder="Digite seu e-mail">
+      <input matInput [(ngModel)]="usuario.emailUsuario"  placeholder="Digite seu e-mail">
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       <mat-hint>Hint</mat-hint>
     </mat-form-field>
@@ -14,14 +14,14 @@
     <!-- Password input -->
     <mat-form-field appearance="outline">
         <mat-label>Senha</mat-label>
-        <input type="password" matInput placeholder="Digite sua senha">
+        <input type="password" matInput [(ngModel)]="usuario.senhaUsuario" placeholder="Digite sua senha">
         <mat-icon matSuffix>lock</mat-icon>
         <mat-hint>Hint</mat-hint>
     </mat-form-field>
 
     <!-- Buttons -->
     <mat-card-actions>
-      <button mat-raised-button color="primary" routerLink="/home"> Login </button>
+      <button mat-raised-button color="primary" (click)="login()" routerLink="/home"> Login </button>
       <button mat-raised-button color="accent"> Cadastrar </button>
     </mat-card-actions>
   </mat-card>

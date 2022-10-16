@@ -1,6 +1,7 @@
-export abstract class Usuario {
+export class Usuario {
   idUsuario?: number;
   nomeUsuario?: string;
   emailUsuario?: string;
-  cpfUsuario?: string
+  cpfUsuario?: string;
+  senhaUsuario?: string
 }
