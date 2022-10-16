@@ -10,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -17,7 +19,7 @@ import org.hibernate.validator.constraints.Length;
 
 
 @Entity
-@Table(name = "alunos")
+@Table(name = "usuarios")
 public class UsuarioEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -43,6 +45,10 @@ public class UsuarioEntity implements Serializable {
 	
 	@OneToMany(mappedBy = "idCaderno", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<CadernoEntity> cadernos;
+	
+	@ManyToOne(fetch = FetchType.EAGER,  cascade=CascadeType.ALL)
+	@JoinColumn(name = "id_tipo_usuario")
+	private TipoUsuario tipoUsuario;
 	
 
 	public UsuarioEntity() {
@@ -106,6 +112,14 @@ public class UsuarioEntity implements Serializable {
 
 	public void setCadernos(Set<CadernoEntity> cadernos) {
 		this.cadernos = cadernos;
+	}
+	
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 
 }

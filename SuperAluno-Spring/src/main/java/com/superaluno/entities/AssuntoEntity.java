@@ -30,7 +30,7 @@ public class AssuntoEntity implements Serializable {
 	private String nomeAssunto;
 	
 	@ManyToOne(fetch = FetchType.EAGER,  cascade=CascadeType.ALL)
-	@JoinColumn(name = "idMateria")
+	@JoinColumn(name = "id_materia")
 	private MateriaEntity materia;
 	
 	@OneToMany(mappedBy = "idCaderno" , fetch = FetchType.EAGER,  cascade=CascadeType.ALL)

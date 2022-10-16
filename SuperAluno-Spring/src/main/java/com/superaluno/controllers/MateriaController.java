@@ -1,5 +1,7 @@
 package com.superaluno.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +26,11 @@ public class MateriaController {
 		MateriaEntity materia = this.materiaService.findMateriaByIdMateria(idMateria);
 		MateriaEntityDTO materiaDTO = new MateriaEntityDTO(materia);
 		return materiaDTO;
+	}
+	
+	@GetMapping("")
+	public List<MateriaEntityDTO> findAllMateriaByUsuario() {
+		return null;
 	}
 
 }

@@ -30,11 +30,11 @@ public class CadernoEntity implements Serializable {
 	private String conteudo;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "idUsuario")
+	@JoinColumn(name = "id_usuario")
 	private UsuarioEntity usuario;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "idAssunto")
+	@JoinColumn(name = "id_assunto")
 	private AssuntoEntity assunto;
 
 	
