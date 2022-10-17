@@ -6,7 +6,9 @@ public class AssuntoEntityDTO {
 	
 	private Long idAssunto;
 	private String nomeAssunto;
+	private MateriaEntityDTO materia;
 	
+
 	public AssuntoEntityDTO() {
 		super();
 	}
@@ -14,6 +16,7 @@ public class AssuntoEntityDTO {
 	public AssuntoEntityDTO(AssuntoEntity assuntoEntity) {
 		this.setIdAssunto(assuntoEntity.getIdAssunto());
 		this.setNomeAssunto(assuntoEntity.getNomeAssunto());
+		this.setMateria(new MateriaEntityDTO(assuntoEntity.getMateria()));
 	}
 
 	public AssuntoEntityDTO(Long idAssunto, String nomeAssunto) {
@@ -36,6 +39,14 @@ public class AssuntoEntityDTO {
 
 	public void setNomeAssunto(String nomeAssunto) {
 		this.nomeAssunto = nomeAssunto;
+	}
+	
+	public MateriaEntityDTO getMateria() {
+		return materia;
+	}
+
+	public void setMateria(MateriaEntityDTO materia) {
+		this.materia = materia;
 	}
 
 }
