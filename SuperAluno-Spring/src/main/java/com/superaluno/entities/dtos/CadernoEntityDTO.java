@@ -6,13 +6,14 @@ public class CadernoEntityDTO {
 	
 	private Long idCaderno;
 	private String conteudo;
-	private String nomeAssunto;
-	
+	private AssuntoEntityDTO assunto;
+
+
 	public CadernoEntityDTO(CadernoEntity cadernoEntity) {
 		super();
 		this.idCaderno = cadernoEntity.getIdCaderno();
 		this.conteudo = cadernoEntity.getConteudo();
-		this.setNomeAssunto(cadernoEntity.getAssunto().getNomeAssunto());
+		this.setAssunto(new AssuntoEntityDTO(cadernoEntity.getAssunto()));
 	}
 
 	public Long getIdCaderno() {
@@ -31,12 +32,12 @@ public class CadernoEntityDTO {
 		this.conteudo = conteudo;
 	}
 
-	public String getNomeAssunto() {
-		return nomeAssunto;
+	public AssuntoEntityDTO getAssunto() {
+		return assunto;
 	}
 
-	public void setNomeAssunto(String nomeAssunto) {
-		this.nomeAssunto = nomeAssunto;
+	public void setAssunto(AssuntoEntityDTO assunto) {
+		this.assunto = assunto;
 	}
 
 }
