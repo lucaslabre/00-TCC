@@ -15,7 +15,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'meus-cadernos', component: AppMainComponent, children: [
+    path: 'meus-cadernos', component: AppMainComponent, canActivate: [AuthGuard], children: [
       { path: '', component: CadernoPageComponent }
     ]
   }

@@ -9,12 +9,12 @@ import { Observable, tap } from 'rxjs';
 export class UsuarioService {
 
   private API = "http://localhost:8080/usuarios";
-  private usuario?: Usuario;
+  private usuario!: Usuario;
   private usuarioAutenticado: boolean = false;
 
   constructor(private http: HttpClient) { }
 
-  getUsuario() {
+  getUsuario(): Usuario {
     return this.usuario;
   }
 

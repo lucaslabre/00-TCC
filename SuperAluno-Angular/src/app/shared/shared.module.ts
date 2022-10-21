@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion'
 
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,7 +32,8 @@ const materialModules = [
   MatIconModule,
   MatToolbarModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatExpansionModule
 ]
 
 const angularModules = [
