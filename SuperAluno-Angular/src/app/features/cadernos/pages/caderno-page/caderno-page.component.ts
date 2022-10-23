@@ -12,7 +12,7 @@ import { Assunto } from '../../../../shared/models/assunto.model';
 })
 export class CadernoPageComponent implements OnInit {
 
-  usuarioAtual!: Usuario;
+  usuarioAtual?: Usuario | null;
   materiasUsuario: string[] = [];
   cadernosUsuario!: Caderno[];
   assuntosUsuario: Assunto[] = [];
@@ -28,13 +28,16 @@ export class CadernoPageComponent implements OnInit {
   ngOnInit(): void {
 
     this.usuarioAtual = this.usuarioService.getUsuario();
+    console.log(this.usuarioAtual);
 
     // this.cadernoService.findAllCadernoByUsuario(this.usuarioAtual.idUsuario).subscribe((cadernos) => this.cadernos = cadernos);
-    this.cadernoService.findAllCadernoByUsuario(1).subscribe((cadernos) => {
-      this.cadernosUsuario = cadernos;
-      this.setAssuntos(this.cadernosUsuario);
-      this.setMaterias(this.assuntosUsuario);
-    });
+    if(this.usuarioAtual) {
+      this.cadernoService.findAllCadernoByUsuario(this.usuarioAtual).subscribe((cadernos) => {
+        console.log(this.cadernosUsuario = cadernos);
+        this.setAssuntos(this.cadernosUsuario);
+        this.setMaterias(this.assuntosUsuario);
+      });
+    }
 
   }
 

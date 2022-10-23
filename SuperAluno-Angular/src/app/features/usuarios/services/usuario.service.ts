@@ -9,8 +9,6 @@ import { Observable, tap, firstValueFrom } from 'rxjs';
 export class UsuarioService {
 
   private API = "http://localhost:8080/usuarios";
-  private usuario!: Usuario;
-  private usuarioAutenticado: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -23,17 +21,13 @@ export class UsuarioService {
       }
 
       try {
-      const observable = this.http.get<Usuario>(`${this.API}/validar`, { params: params })
-        .pipe(
-          tap((user) => { this.usuario = user })
-        );
+      const observable = this.http.get<Usuario>(`${this.API}/validar`, { params: params });
 
-        const result = await firstValueFrom(observable);
-        if(result) {
-          window.localStorage.setItem('token', JSON.stringify(result));
-          console.log('value -> ', result);
-        }
-        console.log('value -> ', result);
+      const result: Usuario = await firstValueFrom(observable);
+      if(result) {
+        window.sessionStorage.setItem('token', JSON.stringify(result));
+      }
+      console.log('value -> ', result);
       } catch(error) {
         console.error("Autenticação Inválida!");
       }
@@ -47,8 +41,13 @@ export class UsuarioService {
     });
   }
 
-  getUsuario(): Usuario {
-    return this.usuario;
+  getUsuario(): Usuario | null {
+    let token = window.sessionStorage.getItem('token');
+    if(token){
+      let user: Usuario = JSON.parse(token);
+      return user;
+    }
+    return null;
   }
 
 }

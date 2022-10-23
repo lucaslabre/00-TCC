@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Caderno } from '../../../shared/models/caderno.model';
+import { Usuario } from '../../usuarios/models/usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class CadernoService {
 
   constructor(private http: HttpClient) { }
 
-  public findAllCadernoByUsuario(idUsuario: number): Observable<Caderno[]> {
-    return this.http.get<Caderno[]>(`${this.API}/${idUsuario}`);
+  public findAllCadernoByUsuario(usuario: Usuario): Observable<Caderno[]> {
+    return this.http.get<Caderno[]>(`${this.API}/${usuario.idUsuario}`);
   }
 
   public findCadernoById(idCaderno: number): Observable<Caderno> {
