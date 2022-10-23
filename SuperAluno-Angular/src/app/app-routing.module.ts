@@ -5,18 +5,25 @@ import { HomePageComponent } from './features/home/pages/home-page/home-page.com
 import { AppMainComponent } from './app.main.component';
 import { CadernoPageComponent } from './features/cadernos/pages/caderno-page/caderno-page.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { AuthenticationComponent } from './features/login/components/authentication/authentication.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
-  { path: 'login', component: LoginPageComponent },
   {
-    path: 'home', component: AppMainComponent, canActivate: [AuthGuard] , children: [
-      { path: '', component: HomePageComponent }
-    ]
+    path: '',
+    component: AppMainComponent,
+    children: [
+      { path: '', component: HomePageComponent },
+      { path: 'home', component: HomePageComponent },
+      { path: 'meus-cadernos', component: CadernoPageComponent }
+    ],
+    canActivate: [AuthGuard]
   },
   {
-    path: 'meus-cadernos', component: AppMainComponent, canActivate: [AuthGuard], children: [
-      { path: '', component: CadernoPageComponent }
+    path: '',
+    component: AuthenticationComponent,
+    children: [
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: 'login', component: LoginPageComponent }
     ]
   }
 ];

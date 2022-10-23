@@ -8,21 +8,16 @@ import { UsuarioService } from '../../features/usuarios/services/usuario.service
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(
-    private router: Router,
-    private usuarioService: UsuarioService
-  ) {}
+  constructor(private router: Router) {}
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
-    if(!this.usuarioService.isUsuarioAutenticado()) {
-      this.router.navigateByUrl("/login");
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    const token = window.localStorage.getItem('token');
+    if(token) {
+      return true;
+    } else {
+      this.router.navigate(['login']);
       return false;
     }
-    return true;
   }
 
 }
