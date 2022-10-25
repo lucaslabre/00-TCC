@@ -43,6 +43,7 @@ export class CadernoPageComponent implements OnInit {
 
   setAssuntos(cadernos: Caderno[]) {
     cadernos.forEach(caderno => this.assuntosUsuario.push(caderno.assunto));
+    console.log(this.assuntosUsuario);
   }
 
   setMaterias(assuntos: Assunto[]) {
@@ -52,6 +53,10 @@ export class CadernoPageComponent implements OnInit {
       }
     });
     console.log(this.materiasUsuario);
+  }
+
+  criarCaderno() {
+
   }
 
   createForm(texto: String) {

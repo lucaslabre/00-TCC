@@ -1,52 +1,26 @@
 <!-- <app-materia-list></app-materia-list> -->
 
+<button mat-raised-button color="primary" class="create-button" (click)="criarCaderno()">Criar Caderno</button>
+
 <mat-accordion>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
+  <mat-expansion-panel
+  (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false"
+  *ngFor="let materia of materiasUsuario">
+
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <mat-icon mat-list-icon color="primary">folder</mat-icon>
-        {{materiasUsuario[0]}}
+        <mat-icon appMarginRightSm mat-list-icon color="primary">folder</mat-icon>
+        {{ materia }}
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <mat-icon mat-list-icon color="primary">folder</mat-icon>
-        {{cadernosUsuario[0] | json}}
+
+    <div appMarginLeftMd *ngFor="let assunto of assuntosUsuario">
+      <div *ngIf="assunto.materia.nomeMateria == materia">
+        <mat-icon appMarginRightSm mat-list-icon color="primary">note</mat-icon>
+        {{ assunto.nomeAssunto }}
+      </div>
+    </div>
   </mat-expansion-panel>
 
-  <!-- <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon mat-list-icon color="primary">folder</mat-icon>
-        {{materiasUsuario[1]}}
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <mat-icon mat-list-icon color="primary">folder</mat-icon>
-        {{cadernosUsuario[1]}}
-  </mat-expansion-panel> -->
 </mat-accordion>
-
-<!-- <mat-list>
-  <div mat-subheader>Matérias</div>
-  <mat-list-item *ngFor="let materia of materiasUsuario">
-    <mat-icon mat-list-icon>folder</mat-icon>
-    <div mat-line>{{materia}}</div>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-</mat-list> -->
-
-<!-- <div>
-  <form [formGroup]="form" (ngSubmit)="puxarDoBanco(cadernos[0].idCaderno)">
-    <mat-list>
-
-      <div mat-subheader>Cadernos</div>
-      <mat-list-item *ngFor="let caderno of cadernos">
-        <mat-icon mat-list-icon color = "primary">book</mat-icon>
-        <div mat-line> {{caderno.nomeAssunto}} </div>
-      </mat-list-item>
-    </mat-list> -->
-
-    <!-- <app-editor></app-editor> -->
-
-  <!-- </form>
-</div> -->

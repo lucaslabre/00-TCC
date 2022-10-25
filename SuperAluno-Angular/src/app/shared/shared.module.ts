@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { EditorComponent } from './components/editor/editor.component';
 import { ContainerPageDirective } from './directives/container-page.directive';
+import { MarginRightSm } from './directives/margin-right-small.directive';
+import { MarginLeftMd } from './directives/margin-left-md.directive copy';
 
 
 const tinyModules = [
@@ -49,7 +51,9 @@ const components = [
 ]
 
 const directives = [
-  ContainerPageDirective
+  ContainerPageDirective,
+  MarginRightSm,
+  MarginLeftMd
 ]
 
 @NgModule({
