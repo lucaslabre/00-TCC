@@ -18,7 +18,7 @@
     <div appMarginLeftMd *ngFor="let assunto of assuntosUsuario">
       <div *ngIf="assunto.materia.nomeMateria == materia">
         <mat-icon appMarginRightSm mat-list-icon color="primary">note</mat-icon>
-        {{ assunto.nomeAssunto }}
+        <span (click)="abrirCaderno(assunto)">{{ assunto.nomeAssunto }}</span>
       </div>
     </div>
   </mat-expansion-panel>

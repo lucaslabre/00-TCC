@@ -5,6 +5,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { UsuarioService } from '../../../usuarios/services/usuario.service';
 import { Usuario } from '../../../usuarios/models/usuario.model';
 import { Assunto } from '../../../../shared/models/assunto.model';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './caderno-page.component.html',
@@ -22,7 +23,8 @@ export class CadernoPageComponent implements OnInit {
 
   constructor(
     private usuarioService: UsuarioService,
-    private cadernoService: CadernoService
+    private cadernoService: CadernoService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -71,8 +73,8 @@ export class CadernoPageComponent implements OnInit {
     }
   }
 
-  puxarDoBanco(idCaderno: number) {
-    this.cadernoService.findCadernoById(idCaderno).subscribe((v) => this.createForm(v.conteudo));
+  abrirCaderno(assunto: Assunto) {
+    this.router.navigate([`editar-caderno/${assunto.idAssunto}`]);
   }
 
 }

@@ -1,0 +1,38 @@
+<h1>{{ caderno?.assunto?.nomeAssunto }}</h1>
+<form [formGroup]="form" >
+  <editor
+    formControlName = "texto"
+    apiKey="d0exmxt1tqshul5yiu264ig5gissssdj5pw43x9dnyj4y8vl"
+    [init]="{
+      height: 500,
+      entity_encoding: 'raw',
+
+      plugins: [
+      'quickbars','save','emoticons','code','advlist','autolink',
+        'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+        'fullscreen','insertdatetime','media','table','help','wordcount'
+      ],
+
+      menubar: 'arquivo formatar inserir ajuda',
+
+      menu: {
+       arquivo: { title: 'Arquivo' , items: 'preview save | export print' },
+       formatar: { title: 'Formatar', items: 'fontfamily fontsize blocks' },
+       editar: { title: 'Editar', items: 'bold italic underline strikethrough | fontfamily fontsize blocks | selectall' },
+       inserir: { title: 'Inserir', items: 'image link media addcomment pageembed template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor tableofcontents' },
+       ajuda: { title: 'Ajuda', items: 'help' }
+      },
+
+      toolbar:
+       'save | undo redo | formatpainter blocks | bold italic underline strikethrough | forecolor backcolor | \
+       alignleft aligncenter alignright alignjustify | \
+       bullist numlist checklist outdent indent | code table help',
+
+      quickbars_selection_toolbar: 'bold italic underline | h1 h2 h3 | quicklink blockquote hr',
+      quickbars_insert_toolbar: false,
+
+      placeholder: 'Utilize este editor para guardar suas anotações'
+    }"
+  ></editor>
+</form>
+

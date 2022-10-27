@@ -6,6 +6,7 @@ import { AppMainComponent } from './app.main.component';
 import { CadernoPageComponent } from './features/cadernos/pages/caderno-page/caderno-page.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { AuthenticationComponent } from './features/login/components/authentication/authentication.component';
+import { EditorPageComponent } from './features/cadernos/pages/editor-page/editor-page.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
     children: [
       { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
-      { path: 'meus-cadernos', component: CadernoPageComponent }
+      { path: 'meus-cadernos', component: CadernoPageComponent },
+      { path: 'editar-caderno/:idAssunto', component: EditorPageComponent }
     ],
     canActivate: [AuthGuard]
   },

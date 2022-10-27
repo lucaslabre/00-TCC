@@ -17,9 +17,14 @@ export class CadernoService {
     return this.http.get<Caderno[]>(`${this.API}/${usuario.idUsuario}`);
   }
 
-  public findCadernoById(idCaderno: number): Observable<Caderno> {
-    let params = new HttpParams().set('idCaderno', idCaderno)
-    return this.http.get<Caderno>(`${this.API}`,{ params: params });
+  findCadernoByIdAssunto(idAssunto: string | null): Observable<Caderno> {
+    return this.http.get<Caderno>(`${this.API}/assunto/${idAssunto}`);
   }
+
+
+  // public findCadernoById(idCaderno: number): Observable<Caderno> {
+  //   let params = new HttpParams().set('idCaderno', idCaderno)
+  //   return this.http.get<Caderno>(`${this.API}`,{ params: params });
+  // }
 
 }
