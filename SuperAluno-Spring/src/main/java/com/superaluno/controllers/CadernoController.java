@@ -31,5 +31,11 @@ public class CadernoController {
 		}
 		return cadernosDTO;
 	}
+	
+	@GetMapping("/assunto/{idAssunto}")
+	public CadernoEntityDTO findCadernoByIdAssunto(@PathVariable Long idAssunto) {
+		CadernoEntity caderno = this.cadernoService.findCadernoByIdAssunto(idAssunto);
+		return new CadernoEntityDTO(caderno);
+	}
 
 }
