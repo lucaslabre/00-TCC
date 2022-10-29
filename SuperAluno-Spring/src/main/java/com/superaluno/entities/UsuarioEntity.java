@@ -17,6 +17,8 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.superaluno.entities.dtos.UsuarioEntityDTO;
+
 
 @Entity
 @Table(name = "usuarios")
@@ -64,6 +66,13 @@ public class UsuarioEntity implements Serializable {
 		this.cpfUsuario = cpfUsuario;
 		this.senhaUsuario = senhaUsuario;
 		this.cadernos = cadernos;
+	}
+
+	public UsuarioEntity(UsuarioEntityDTO usuarioDTO) {
+		this.idUsuario = usuarioDTO.getIdUsuario();
+		this.nomeUsuario = usuarioDTO.getNomeUsuario();
+		this.emailUsuario = usuarioDTO.getEmailUsuario();
+		this.cpfUsuario = usuarioDTO.getCpfUsuario();
 	}
 
 	public Long getIdUsuario() {

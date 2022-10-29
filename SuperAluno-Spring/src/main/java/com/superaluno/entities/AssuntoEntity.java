@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.superaluno.entities.dtos.AssuntoEntityDTO;
+
 @Entity
 @Table(name = "assuntos")
 public class AssuntoEntity implements Serializable {
@@ -48,6 +50,12 @@ public class AssuntoEntity implements Serializable {
 		this.nomeAssunto = nomeAssunto;
 		this.materia = materia;
 		this.cadernos = cadernos;
+	}
+
+	public AssuntoEntity(AssuntoEntityDTO assuntoDTO) {
+		this.idAssunto = assuntoDTO.getIdAssunto();
+		this.nomeAssunto = assuntoDTO.getNomeAssunto();
+		this.setMateria(new MateriaEntity(assuntoDTO.getMateria()));
 	}
 
 	public String getNomeAssunto() {

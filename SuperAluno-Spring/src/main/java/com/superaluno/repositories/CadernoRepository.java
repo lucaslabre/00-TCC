@@ -16,5 +16,7 @@ public interface CadernoRepository extends JpaRepository<CadernoEntity, Long> {
 	List<CadernoEntity> findAllCadernoByUsuario(UsuarioEntity usuario);
 
 	CadernoEntity findCadernoByAssunto(AssuntoEntity assunto);
+
+	CadernoEntity findCadenoByIdCaderno(Long idCaderno);	
 	 
 }

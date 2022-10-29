@@ -14,6 +14,8 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.superaluno.entities.dtos.CadernoEntityDTO;
+
 @Entity
 @Table(name = "cadernos")
 public class CadernoEntity implements Serializable {
@@ -40,7 +42,6 @@ public class CadernoEntity implements Serializable {
 	
 	public CadernoEntity() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public CadernoEntity(Long idCaderno, String conteudo, UsuarioEntity usuario, AssuntoEntity assunto) {
@@ -49,6 +50,13 @@ public class CadernoEntity implements Serializable {
 		this.conteudo = conteudo;
 		this.usuario = usuario;
 		this.assunto = assunto;
+	}
+
+	public CadernoEntity(CadernoEntityDTO cadernoDTO) {
+		this.idCaderno = cadernoDTO.getIdCaderno();
+		this.conteudo = cadernoDTO.getConteudo();
+		this.setUsuario(new UsuarioEntity(cadernoDTO.getUsuario()));
+		this.setAssunto(new AssuntoEntity(cadernoDTO.getAssunto()));
 	}
 
 	public Long getIdCaderno() {

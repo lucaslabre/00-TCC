@@ -11,7 +11,7 @@ import { Caderno } from '../../../../shared/models/caderno.model';
 export class EditorPageComponent implements OnInit {
 
   form: FormGroup = new FormGroup({texto: new FormControl('')});
-  caderno?: Caderno;
+  caderno!: Caderno;
 
   constructor(
     private cadernoService: CadernoService,
@@ -32,9 +32,11 @@ export class EditorPageComponent implements OnInit {
     })
   }
 
-  onSubmit() {
+  salvarConteudo() {
     if(this.form){
       console.log(this.form.value);
+      this.caderno.conteudo = this.form.value['texto'];
+      this.cadernoService.salvarConteudo(this.caderno).subscribe();
     }
   }
 

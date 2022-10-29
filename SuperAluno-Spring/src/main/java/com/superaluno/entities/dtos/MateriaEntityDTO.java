@@ -8,6 +8,10 @@ public class MateriaEntityDTO {
 	private String nomeMateria;
 	
 	
+	public MateriaEntityDTO() {
+		super();
+	}
+
 	public MateriaEntityDTO(MateriaEntity materiaEntity) {
 		this.setIdMateria(materiaEntity.getIdMateria());
 		this.setNomeMateria(materiaEntity.getNomeMateria());

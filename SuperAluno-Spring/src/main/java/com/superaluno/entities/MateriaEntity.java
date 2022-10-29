@@ -15,6 +15,8 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.superaluno.entities.dtos.MateriaEntityDTO;
+
 @Entity
 @Table(name = "materias")
 public class MateriaEntity implements Serializable {
@@ -44,6 +46,11 @@ public class MateriaEntity implements Serializable {
 		this.idMateria = idMateria;
 		this.nomeMateria = nomeMateria;
 		this.assuntos = assuntos;
+	}
+
+	public MateriaEntity(MateriaEntityDTO materiaDTO) {
+		this.idMateria = materiaDTO.getIdMateria();
+		this.nomeMateria = materiaDTO.getNomeMateria();
 	}
 
 	public String getNomeMateria() {

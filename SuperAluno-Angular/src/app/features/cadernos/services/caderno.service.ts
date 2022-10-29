@@ -14,11 +14,15 @@ export class CadernoService {
   constructor(private http: HttpClient) { }
 
   public findAllCadernoByUsuario(usuario: Usuario): Observable<Caderno[]> {
-    return this.http.get<Caderno[]>(`${this.API}/${usuario.idUsuario}`);
+    return this.http.get<Caderno[]>(`${this.API}/usuario/${usuario.idUsuario}`);
   }
 
   findCadernoByIdAssunto(idAssunto: string | null): Observable<Caderno> {
     return this.http.get<Caderno>(`${this.API}/assunto/${idAssunto}`);
+  }
+
+  salvarConteudo(caderno: Caderno) {
+    return this.http.put<Caderno>(`${this.API}`, caderno)
   }
 
 

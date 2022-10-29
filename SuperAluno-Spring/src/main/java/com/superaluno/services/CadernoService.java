@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.superaluno.entities.AssuntoEntity;
 import com.superaluno.entities.CadernoEntity;
 import com.superaluno.entities.UsuarioEntity;
+import com.superaluno.entities.dtos.CadernoEntityDTO;
 import com.superaluno.repositories.CadernoRepository;
 
 @Service
@@ -28,6 +29,16 @@ public class CadernoService {
 	public CadernoEntity findCadernoByIdAssunto(Long idAssunto) {
 		AssuntoEntity assunto = this.assuntoService.findAssuntoByIdAssunto(idAssunto);
 		return this.cadernoRepository.findCadernoByAssunto(assunto);
+	}
+
+	public CadernoEntity updateCaderno(CadernoEntityDTO cadernoDTO) {
+		CadernoEntity caderno = this.findCadernoByIdCaderno(cadernoDTO.getIdCaderno());
+		caderno.setConteudo(cadernoDTO.getConteudo());
+		return this.cadernoRepository.save(caderno);
+	}
+
+	public CadernoEntity findCadernoByIdCaderno(Long idCaderno) {
+		return this.cadernoRepository.findCadenoByIdCaderno(idCaderno);
 	}
 
 }

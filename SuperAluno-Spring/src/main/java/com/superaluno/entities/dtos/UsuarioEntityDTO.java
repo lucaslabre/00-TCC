@@ -10,6 +10,10 @@ public class UsuarioEntityDTO {
 	private String cpfUsuario;
 	
 	
+	public UsuarioEntityDTO() {
+		super();
+	}
+
 	public UsuarioEntityDTO(UsuarioEntity usuarioEntity) {
 		super();
 		this.idUsuario = usuarioEntity.getIdUsuario();
