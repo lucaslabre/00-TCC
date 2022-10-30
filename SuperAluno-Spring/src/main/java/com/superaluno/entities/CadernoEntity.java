@@ -31,6 +31,9 @@ public class CadernoEntity implements Serializable {
 	@Lob  // Annotation to generate the "text" type in the database
 	private String conteudo;
 	
+	@Column(name = "publicado")
+	private Boolean publicado;
+	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_usuario")
 	private UsuarioEntity usuario;
@@ -44,10 +47,12 @@ public class CadernoEntity implements Serializable {
 		super();
 	}
 
-	public CadernoEntity(Long idCaderno, String conteudo, UsuarioEntity usuario, AssuntoEntity assunto) {
+	public CadernoEntity(Long idCaderno, String conteudo, Boolean publicado, UsuarioEntity usuario,
+			AssuntoEntity assunto) {
 		super();
 		this.idCaderno = idCaderno;
 		this.conteudo = conteudo;
+		this.publicado = publicado;
 		this.usuario = usuario;
 		this.assunto = assunto;
 	}
@@ -55,6 +60,7 @@ public class CadernoEntity implements Serializable {
 	public CadernoEntity(CadernoEntityDTO cadernoDTO) {
 		this.idCaderno = cadernoDTO.getIdCaderno();
 		this.conteudo = cadernoDTO.getConteudo();
+		this.publicado = cadernoDTO.isPublicado();
 		this.setUsuario(new UsuarioEntity(cadernoDTO.getUsuario()));
 		this.setAssunto(new AssuntoEntity(cadernoDTO.getAssunto()));
 	}
@@ -69,6 +75,14 @@ public class CadernoEntity implements Serializable {
 
 	public void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
+	}
+
+	public Boolean isPublicado() {
+		return publicado;
+	}
+
+	public void setPublicado(Boolean publicado) {
+		this.publicado = publicado;
 	}
 
 	public UsuarioEntity getUsuario() {
