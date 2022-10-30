@@ -1,0 +1,12 @@
+.header-editor {
+  display: flex;
+  justify-content: space-between;
+
+  .button-editor {
+    margin-right: 5px;
+  }
+}
+
+:host ::ng-deep .tox-statusbar__path {
+  visibility: hidden;
+}

@@ -1,4 +1,16 @@
-<h1>{{ caderno.assunto.nomeAssunto }}</h1>
+<div class="header-editor">
+  <h1>{{ caderno.assunto.nomeAssunto }}</h1>
+  <div>
+    <button mat-raised-button color="primary" class="button-editor">Solicitar Professor</button>
+    <a href="https://www.youtube.com/watch?v=QvOX8l_0wKU&ab_channel=RespondeA%C3%AD" target="_blank">
+      <button mat-raised-button color="primary" class="button-editor"> Assistir vídeo </button>
+    </a>
+    <a href="https://www.todamateria.com.br/movimento-retilineo-uniforme/">
+      <button mat-raised-button color="primary" class="button-editor">Ler Conteúdo</button>
+    </a>
+  </div>
+</div>
+
 <form [formGroup]="form" >
   <button name="submitbtn" mat-raised-button color="primary" (click)="salvarConteudo()">Salvar</button>
   <editor
@@ -9,7 +21,7 @@
       entity_encoding: 'raw',
 
       plugins: [
-      'autosave','quickbars','emoticons','code','advlist','autolink',
+      'fullscreen','autosave','quickbars','emoticons','code','advlist','autolink',
         'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
         'fullscreen','insertdatetime','media','table','help','wordcount'
       ],
@@ -25,7 +37,7 @@
       },
 
       toolbar:
-      'undo redo | formatpainter blocks | bold italic underline strikethrough | forecolor backcolor | \
+      'fullscreen | undo redo | formatpainter blocks | bold italic underline strikethrough | forecolor backcolor | \
        alignleft aligncenter alignright alignjustify | \
        bullist numlist checklist outdent indent | code table help',
 
