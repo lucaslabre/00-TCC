@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { CadernoService } from '../../services/caderno.service';
 import { ActivatedRoute } from '@angular/router';
 import { Caderno } from '../../../../shared/models/caderno.model';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
   templateUrl: './editor-page.component.html',
@@ -12,10 +13,13 @@ export class EditorPageComponent implements OnInit {
 
   form: FormGroup = new FormGroup({texto: new FormControl('')});
   caderno!: Caderno;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   constructor(
     private cadernoService: CadernoService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -37,6 +41,12 @@ export class EditorPageComponent implements OnInit {
       console.log(this.form.value);
       this.caderno.conteudo = this.form.value['texto'];
       this.cadernoService.salvarConteudo(this.caderno).subscribe();
+
+      this._snackBar.open('Seu caderno está salvo :)', 'Entendi', {
+        duration: 3000,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
     }
   }
 
