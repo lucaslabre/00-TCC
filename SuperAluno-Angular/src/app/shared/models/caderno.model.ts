@@ -1,6 +1,9 @@
 import { Assunto } from './assunto.model';
+import { Usuario } from '../../features/usuarios/models/usuario.model';
 export class Caderno {
   "idCaderno": number;
   "conteudo": string;
-  "assunto": Assunto
+  "publicado": boolean;
+  "assunto": Assunto;
+  "usuario": Usuario;
 }
