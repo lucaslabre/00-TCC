@@ -42,6 +42,13 @@ public class CadernoController {
 		return ResponseEntity.ok().body(new CadernoEntityDTO(caderno));
 	}
 	
+	@PostMapping()
+	public CadernoEntityDTO createCaderno(@RequestBody CadernoEntityDTO cadernoDTO) {
+		CadernoEntity caderno = this.cadernoService.createCaderno(cadernoDTO);
+		cadernoDTO = new CadernoEntityDTO(caderno); 
+		return cadernoDTO;
+	}
+	
 	@PutMapping()
 	public CadernoEntityDTO updateCaderno(@RequestBody CadernoEntityDTO cadernoDTO) {
 		CadernoEntity caderno = this.cadernoService.updateCaderno(cadernoDTO);

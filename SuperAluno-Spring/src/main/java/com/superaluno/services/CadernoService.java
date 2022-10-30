@@ -41,4 +41,12 @@ public class CadernoService {
 		return this.cadernoRepository.findCadenoByIdCaderno(idCaderno);
 	}
 
+	public CadernoEntity createCaderno(CadernoEntityDTO cadernoDTO) {
+		CadernoEntity caderno = new CadernoEntity(cadernoDTO);
+		caderno.setPublicado(false);
+		caderno.setAssunto(this.assuntoService.findAssuntoByIdAssunto(cadernoDTO.getAssunto().getIdAssunto()));
+		caderno.setUsuario(this.usuarioService.findUsuarioByIdUsuario(cadernoDTO.getUsuario().getIdUsuario()));
+		return this.cadernoRepository.save(caderno);
+	}
+
 }
