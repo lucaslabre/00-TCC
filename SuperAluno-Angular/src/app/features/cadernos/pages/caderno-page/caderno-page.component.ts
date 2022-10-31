@@ -6,6 +6,8 @@ import { UsuarioService } from '../../../usuarios/services/usuario.service';
 import { Usuario } from '../../../usuarios/models/usuario.model';
 import { Assunto } from '../../../../shared/models/assunto.model';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateCadernoDialogComponent } from '../../../../shared/components/dialogs/create-caderno-dialog/create-caderno-dialog.component';
 
 @Component({
   templateUrl: './caderno-page.component.html',
@@ -24,7 +26,8 @@ export class CadernoPageComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService,
     private cadernoService: CadernoService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -58,7 +61,7 @@ export class CadernoPageComponent implements OnInit {
   }
 
   criarCaderno() {
-
+    this.dialog.open(CreateCadernoDialogComponent);
   }
 
   createForm(texto: String) {
@@ -73,8 +76,8 @@ export class CadernoPageComponent implements OnInit {
     }
   }
 
-  abrirCaderno(assunto: Assunto) {
-    this.router.navigate([`editar-caderno/${assunto.idAssunto}`]);
+  abrirCaderno(caderno: Caderno) {
+    this.router.navigate([`editar-caderno/${caderno.idCaderno}`]);
   }
 
 }

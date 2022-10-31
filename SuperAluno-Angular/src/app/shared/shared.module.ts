@@ -12,7 +12,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,6 +22,7 @@ import { EditorComponent } from './components/editor/editor.component';
 import { ContainerPageDirective } from './directives/container-page.directive';
 import { MarginRightSm } from './directives/margin-right-small.directive';
 import { MarginLeftMd } from './directives/margin-left-md.directive copy';
+import { CreateCadernoDialogComponent } from './components/dialogs/create-caderno-dialog/create-caderno-dialog.component';
 
 
 const tinyModules = [
@@ -37,7 +39,8 @@ const materialModules = [
   MatSidenavModule,
   MatListModule,
   MatExpansionModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatDialogModule
 ]
 
 const angularModules = [
@@ -49,7 +52,8 @@ const angularModules = [
 
 const components = [
   TopbarComponent,
-  EditorComponent
+  EditorComponent,
+  CreateCadernoDialogComponent
 ]
 
 const directives = [

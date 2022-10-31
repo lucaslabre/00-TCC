@@ -23,8 +23,8 @@ export class EditorPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const idAssunto = this.activatedRoute.snapshot.paramMap.get('idAssunto');
-    this.cadernoService.findCadernoByIdAssunto(idAssunto).subscribe(caderno => {
+    const idCaderno = this.activatedRoute.snapshot.paramMap.get('idCaderno');
+    this.cadernoService.findCadernoByIdCaderno(idCaderno).subscribe(caderno => {
       console.log(this.caderno = caderno);
       this.createForm(this.caderno.conteudo);
     });

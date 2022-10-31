@@ -1,0 +1,23 @@
+<form class="container-form" [formGroup]="form">
+
+  {{form.value | json}}
+  <mat-form-field appearance="legacy" class="input-form">
+    <mat-label>Matéria</mat-label>
+    <input matInput formControlName = "nomeMateria" placeholder="Qual a Matéria?">
+    <mat-icon matSuffix>collections_bookmark</mat-icon>
+    <mat-hint>Campo Obrigatório!</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy" class="input-form">
+    <mat-label>Assunto</mat-label>
+    <input matInput formControlName = "nomeAssunto" placeholder="Qual o assunto?">
+    <mat-icon matSuffix>bookmark</mat-icon>
+    <mat-hint>Campo Obrigatório!</mat-hint>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="createCaderno()" cdkFocusInitial>Criar</button>
+    <button mat-button (click)="cancel()">Cancelar</button>
+  </div>
+
+</form>

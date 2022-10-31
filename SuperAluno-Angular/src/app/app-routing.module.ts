@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
       { path: 'meus-cadernos', component: CadernoPageComponent },
-      { path: 'editar-caderno/:idAssunto', component: EditorPageComponent }
+      { path: 'editar-caderno/:idCaderno', component: EditorPageComponent }
     ],
     canActivate: [AuthGuard]
   },

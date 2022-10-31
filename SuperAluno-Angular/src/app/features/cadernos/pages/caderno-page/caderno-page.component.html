@@ -15,10 +15,10 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <div appMarginLeftMd *ngFor="let assunto of assuntosUsuario">
-      <div *ngIf="assunto.materia.nomeMateria == materia">
+    <div appMarginLeftMd *ngFor="let caderno of cadernosUsuario">
+      <div *ngIf="caderno.assunto.materia.nomeMateria == materia">
         <mat-icon appMarginRightSm mat-list-icon color="primary">note</mat-icon>
-        <span (click)="abrirCaderno(assunto)">{{ assunto.nomeAssunto }}</span>
+        <span (click)="abrirCaderno(caderno)">{{ caderno.assunto.nomeAssunto }}</span>
       </div>
     </div>
   </mat-expansion-panel>
