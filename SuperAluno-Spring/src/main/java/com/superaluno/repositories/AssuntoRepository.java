@@ -10,4 +10,6 @@ public interface AssuntoRepository extends JpaRepository<AssuntoEntity, Long> {
 	
 	AssuntoEntity findByIdAssunto(Long idAssunto);
 
+	AssuntoEntity findAssuntoByNomeAssunto(String nomeAssunto);
+
 }

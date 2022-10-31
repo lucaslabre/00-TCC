@@ -16,4 +16,12 @@ public class AssuntoService {
 		return this.assuntoRepository.findByIdAssunto(idAssunto);
 	}
 
+	public AssuntoEntity findAssuntoByNomeAssunto(String nomeAssunto) {
+		return this.assuntoRepository.findAssuntoByNomeAssunto(nomeAssunto);
+	}
+
+	public AssuntoEntity createAssunto(AssuntoEntity assunto) {
+		return this.assuntoRepository.save(assunto);
+	}
+
 }
